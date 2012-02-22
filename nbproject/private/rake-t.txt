@@ -1,0 +1,5 @@
+(in /home/kaushal/question_test_project)
+rake aborted!
+no such file to load -- bundler/setup
+/home/kaushal/question_test_project/Rakefile:5
+(See full trace by running task with --trace)

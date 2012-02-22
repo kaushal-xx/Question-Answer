@@ -1,0 +1,33 @@
+<table>
+  <tr style = "background: grey;">
+    <td>Question :- <%= @question.q_value%></td>
+  </tr>
+  <tr style = "background: grey;">
+    <td>Created By :- <%= @question.user.email rescue ''%></td>
+  </tr>
+  <tr>
+    <td>
+      <% @answers = @question.answers %>
+          <%= render @answers || "No Answer" %>
+    </td>
+  </tr>
+</table>
+<%= form_for @question.answers.new, :url => question_answer_path(@question) do |f| %>
+  <table>
+    <tr>
+    <td>
+      <%= f.label :a_value, 'Enter Answer'%>
+    </td>
+    <td>
+      <%= f.text_field :a_value %>
+    </td>
+    <tr>
+      <td>
+        <%= f.submit 'Save'%>
+      </td>
+    </tr>
+  </table>
+<% end %>
+<br/>
+<%= link_to "Create New Question", new_question_path%>
+<%= link_to "Back", questions_path %>

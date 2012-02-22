@@ -1,0 +1,20 @@
+<%= form_for @question, :url => questions_path(@question) do |f| %>
+  <table>
+    <tr>
+    <td>
+      <%= f.label :q_value, 'Enter Question'%>
+    </td>
+    <td>
+      <%= f.text_field :q_value %>
+    </td>
+    <tr>
+      <td>
+        <%= f.submit 'Save'%>
+      </td>
+      <td>
+        <input type="button" value="Back" onclick='window.history.back()'/>
+      </td>
+    </tr>
+  </table>
+<% end %>
+

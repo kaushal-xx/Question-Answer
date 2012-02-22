@@ -1,0 +1,16 @@
+<%@questions.each do |question|%>
+  <table style="background: grey;">
+    <tr style="color: red;">
+      <td>Question :- <%= link_to question.q_value, question_path(question)%></td>
+      </tr>
+      <tr>
+        <td>Created By :- <%= question.user.email rescue ''%></td>
+      </tr>
+      <tr>
+        <td>Answer Count :- <%= question.answers.count rescue 0%></td>
+      </tr>
+      <tr></tr>
+    </table>
+    <br/>
+  <%end%>
+  <%= link_to "Create New Question", new_question_path%>
